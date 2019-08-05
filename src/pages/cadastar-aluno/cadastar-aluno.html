@@ -1,0 +1,69 @@
+<!--
+  Generated template for the CadastarAlunoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>cadastarAluno</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form padding [formGroup]="cadastroForm" (submit)="cadastrar()" novalidate>
+       <ion-item>
+        <ion-label stacked>Nome</ion-label>
+        <ion-input ([ngModel])="nome"
+                     formControlName="nome"
+                     type="text"
+                     placeholder="Nome"
+                     maxlength="70"
+                     clearInput clearOnEdit="false">
+        </ion-input>
+      </ion-item>
+
+      <h6 *ngIf="errorNome" class="error"> {{messageNome}}</h6>
+
+       <ion-item>
+          <ion-label stacked>CPF</ion-label>
+          <ion-input ([ngModel])="cpf"
+                      formControlName="cpf"
+                      type="text"
+                      placeholder="Cpf"
+                      clearInput clearOnEdit="false"
+                      [brmasker]="{mask:'000.000.000-00', len:14}"
+                      clearInput clearOnEdit="false">
+          </ion-input>
+        </ion-item>
+        <h6 *ngIf="errorCpf" class="error"> {{messageCpf}}</h6>
+
+        <ion-item>
+            <ion-label stacked>Telefone</ion-label>
+            <ion-input ([ngModel])="telefone"
+                          formControlName="telefone"
+                          type="text"
+                          placeholder="Telefone"
+                          maxlength="120"
+                          clearInput clearOnEdit="false"
+                          [brmasker]="{mask:'00 00000-0000', len:13}">
+            </ion-input>
+        </ion-item>
+        <h6 *ngIf="errorCpf" class="error"> {{messageTelefone}}</h6>
+        <ion-item>
+            <ion-label>Turma</ion-label>
+            <ion-select ([ngModel])="idTurma " formControlName="idTurma" clearInput clearOnEdit="false" interface="action-sheet" >
+              
+              <ion-option *ngFor="let m of turmas; let i = index" value="{{m.idTurma.toString()}}" >{{m.serie}} - {{m.letra}} {{m.turnoTexto}} - {{m.tipoSerieTexto}} </ion-option>
+            </ion-select>
+        </ion-item> 
+    
+        
+        <h6 *ngIf="errorSenha" class="error"> {{messageTurma}}</h6>
+
+
+        <button ion-button full color="secondary" *ngIf="isPai== undefined" class="login-button">{{titulo}}</button>
+        <button ion-button full color="secondary" *ngIf="isPai != undefined">{{titulo}}}</button>
+      </form>
+
+</ion-content>

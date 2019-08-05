@@ -1,0 +1,59 @@
+<!--
+  Generated template for the CadastrarTurmasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{titulo}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form padding [formGroup]="cadastroForm" (submit)="cadastrar()" novalidate>
+    <ion-item>
+      <ion-input ([ngModel])="serie"
+                 formControlName="serie"
+                 type="text"
+                 placeholder="Serie"
+                 maxlength="1"
+                 clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorSerie" class="error"> {{messageSerie}}</h6>
+    
+    <ion-item>
+      <ion-input ([ngModel])="letra"
+                 formControlName="letra"
+                 type="text"
+                 placeholder="Letra"
+                 maxlength="1"
+                 clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorLetra" class="error"> {{messageLetra}}</h6>
+
+    <ion-item>
+        <ion-label>Turno</ion-label>
+        <ion-select ([ngModel])="turno "cancelText="cancelar"  okText="Ok" formControlName="turno" clearInput clearOnEdit="false" >
+          <!--<ion-option value ='1'checked="true">Manhã</ion-option>-->
+          <ion-option *ngFor="let m of turnos; let i = index" value="{{i.toString()}}" >{{i}} - {{ m }}</ion-option>
+        </ion-select>
+    </ion-item>
+    <h6 *ngIf="errorTurno" class="error"> {{messageTurno}}</h6>
+
+    <ion-item>
+        <ion-label>Turno</ion-label>
+        <ion-select ([ngModel])="tipoSerie "cancelText="cancelar"  okText="Ok" formControlName="tipoSerie" clearInput clearOnEdit="false" >
+          <!--<ion-option value ='1'checked="true">Manhã</ion-option>-->
+          <ion-option *ngFor="let m of tipos; let i = index" value="{{i.toString()}}" >{{i}} - {{ m }}</ion-option>
+        </ion-select>
+    </ion-item>
+    <h6 *ngIf="errorSerie" class="error"> {{messageTurno}}</h6>
+
+
+    <button ion-button block outline color="secondary" *ngIf="isturma == undefined" class="login-button">Cadastrar</button>
+    <button ion-button block outline color="secondary" *ngIf="isturma != undefined">Concluir edição</button>
+  </form>
+</ion-content>

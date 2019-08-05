@@ -1,0 +1,45 @@
+<!--
+  Generated template for the CadastarAlunoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cadastrar Matéria</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form padding [formGroup]="cadastroForm" (submit)="cadastrar()" novalidate>
+       <ion-item>
+        <ion-label stacked>Nome</ion-label>
+        <ion-input ([ngModel])="nome"
+                     formControlName="nome"
+                     type="text"
+                     placeholder="Nome"
+                     maxlength="70"
+                     clearInput clearOnEdit="false">
+        </ion-input>
+      </ion-item>
+
+      <h6 *ngIf="errorNome" class="error"> {{messageNome}}</h6>
+
+    
+        <ion-item>
+            <ion-label>Turma</ion-label>
+            <ion-select ([ngModel])="idTurma " formControlName="idTurma" clearInput clearOnEdit="false" interface="action-sheet" >
+              
+              <ion-option *ngFor="let m of turmas; let i = index" value="{{m.idTurma.toString()}}" >{{m.serie}} - {{m.letra}} {{m.turnoTexto}} - {{m.tipoSerieTexto}} </ion-option>
+            </ion-select>
+        </ion-item> 
+    
+        
+        <h6 *ngIf="errorSenha" class="error"> {{messageTurma}}</h6>
+
+
+        <button ion-button full color="secondary" *ngIf="isPai== undefined" class="login-button">{{titulo}}</button>
+        <button ion-button full color="secondary" *ngIf="isPai != undefined">{{titulo}}}</button>
+      </form>
+
+</ion-content>

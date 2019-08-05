@@ -1,0 +1,78 @@
+<!--
+  Generated template for the CadastrarPaiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title> {{titulo}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form padding [formGroup]="cadastroForm" (submit)="cadastrar()" novalidate>
+    <ion-item>
+      <ion-input ([ngModel])="Nome"
+                   formControlName="Nome"
+                   type="text"
+                   placeholder="Nome"
+                   maxlength="70"
+                   clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorNome" class="error"> {{messageNome}}</h6>
+      
+    <ion-item>
+      <ion-input ([ngModel])="Cpf"
+                  formControlName="Cpf"
+                  type="text"
+                  placeholder="Cpf"
+                  clearInput clearOnEdit="false"
+                  [brmasker]="{mask:'000.000.000-00', len:14}">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorCpf" class="error"> {{messageCpf}}</h6>
+
+    <ion-item>
+      <ion-input ([ngModel])="Endereco"
+                    formControlName="Endereco"
+                    type="text"
+                    placeholder="Endereco"
+                    maxlength="120"
+                    clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorEndereco" class="error"> {{messageEndereco}}</h6>
+
+    <ion-item>
+      <ion-input ([ngModel])="Telefone"
+                    formControlName="Telefone"
+                    type="text"
+                    placeholder="Telefone"
+                    maxlength="120"
+                    clearInput clearOnEdit="false"
+                    [brmasker]="{mask:'00 00000-0000', len:13}">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorTelefone" class="error"> {{messageTelefone}}</h6>
+    <ion-item>
+        <ion-input ([ngModel])="Senha"
+                      formControlName="Senha"
+                      type="password"
+                      placeholder="Senha"
+                      maxlength="120"
+                      clearInput clearOnEdit="false"
+                     >
+        </ion-input>
+    </ion-item>
+
+    
+    <h6 *ngIf="errorSenha" class="error"> {{messageSenha}}</h6>
+    <br/>
+    <button ion-button full color="secondary" *ngIf="isPai== undefined" class="login-button">{{titulo}}}</button>
+    <button ion-button full color="secondary" *ngIf="isPai != undefined">{{titulo}}}</button>
+
+    </form>
+
+</ion-content>
