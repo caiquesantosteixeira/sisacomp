@@ -21,12 +21,17 @@ export class ProfessorProvider {
     console.log('Hello ReponsavelProvider Provider');
   }
 
-  getProfessor(idMateria:number){ //API
+  getProfessor(){ //API
+    return this.http.get(this.host.ip+this.host.caminhoClasses+"professor").timeout(8000);
+  }
+
+
+  getProfessorByMateria(idMateria:number){ //API
     return this.http.get(this.host.ip+this.host.caminhoClasses+"professor/GetProfessor?idMateria="+idMateria).timeout(8000);;
   }
 
 
-  postPai(professor:professor){
+  postProfessor(professor:professor){
 
     var link = this.host.ip+this.host.caminhoClasses+"professor"
 
@@ -39,7 +44,7 @@ export class ProfessorProvider {
     return this.http.post(link, data, { headers: headers }).timeout(8000);
   }
 
-  putPai(professor:professor){
+  putProfessor(professor:professor){
 
     var link = this.host.ip+this.host.caminhoClasses+"professor"
 

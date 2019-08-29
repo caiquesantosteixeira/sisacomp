@@ -1,3 +1,4 @@
+import { VincularProfessorPageModule } from './../pages/vincular-professor/vincular-professor.module';
 import { CadastrarProfessorPageModule } from './../pages/cadastrar-professor/cadastrar-professor.module';
 import { ProfessoresPageModule } from './../pages/professores/professores.module';
 import { CadastarMateriaPageModule } from './../pages/cadastar-materia/cadastar-materia.module';
@@ -33,6 +34,8 @@ import { HttpModule } from '@angular/http';
 import { PaisProvider } from '../providers/pais/pais';
 import { MateriaProvider } from '../providers/materia/materia';
 import { ProfessorProvider } from '../providers/professor/professor';
+import { MateriaTurmaProvider } from '../providers/materia-turma/materia-turma';
+import { ProfessorMateriaProvider } from '../providers/professor-materia/professor-materia';
 
 
 @NgModule({
@@ -62,6 +65,7 @@ import { ProfessorProvider } from '../providers/professor/professor';
     CadastarMateriaPageModule,
     ProfessoresPageModule,
     CadastrarProfessorPageModule,
+    VincularProfessorPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -80,7 +84,9 @@ import { ProfessorProvider } from '../providers/professor/professor';
     AlunoProvider,
     PaisProvider,
     MateriaProvider,
-    ProfessorProvider
+    ProfessorProvider,
+    MateriaTurmaProvider,
+    ProfessorMateriaProvider
   ]
 })
 export class AppModule {}

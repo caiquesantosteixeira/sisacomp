@@ -1,4 +1,4 @@
-import { ProfessoresPage } from './../professores/professores';
+import { VincularProfessorPage } from './../vincular-professor/vincular-professor';
 import { CadastarMateriaPage } from './../cadastar-materia/cadastar-materia';
 import { MateriaProvider } from './../../providers/materia/materia';
 import { Component } from '@angular/core';
@@ -101,7 +101,7 @@ export class MateriasPage {
   }
 
   goProfessores(materia:materia){
-    this.navCtrl.push(ProfessoresPage, {materia:materia, turma:this.turma});
+    this.navCtrl.push(VincularProfessorPage, {materia:materia});
   }
 
   Abrecarregamento(msg:string){

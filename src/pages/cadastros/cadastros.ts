@@ -1,3 +1,4 @@
+import { ProfessoresPage } from './../professores/professores';
 import { TurmaMateriaPage } from './../turma-materia/turma-materia';
 import { PaisPage } from './../pais/pais';
 import { TurmasPage } from './../turmas/turmas';
@@ -36,6 +37,10 @@ export class CadastrosPage {
 
   goMaterias(){
     this.navCtrl.push(TurmaMateriaPage);
+  }
+
+  goProfessores(){
+    this.navCtrl.push(ProfessoresPage);
   }
 
 }

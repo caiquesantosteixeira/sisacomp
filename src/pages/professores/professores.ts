@@ -1,12 +1,10 @@
+import { CadastrarProfessorPage } from './../cadastrar-professor/cadastrar-professor';
 import { professor } from './../../Models/professor';
 import { ProfessorProvider } from './../../providers/professor/professor';
-import { AlunosPage } from './../alunos/alunos';
 import { CadastrarPaiPage } from './../cadastrar-pai/cadastrar-pai';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Loading, AlertController, LoadingController } from 'ionic-angular';
-import { turma } from '../../Models/turma';
-import { responsavel } from '../../Models/responsavel';
-import { materia } from '../../Models/materia';
+
 
 
 
@@ -23,25 +21,25 @@ import { materia } from '../../Models/materia';
   templateUrl: 'professores.html',
 })
 export class ProfessoresPage{
-  public turma = new turma();
-  public materia = new materia();
+  //public turma = new turma();
+  //public materia = new materia();
+  public professores = new Array<professor>();
   public professor = new professor();
-
   public loader:Loading ;
   constructor(public alertController:AlertController, public loadingCtrl:LoadingController,public professorProvider:ProfessorProvider, public navCtrl: NavController, public navParams: NavParams) {
-    this.turma = this.navParams.get("turma");
-    this.materia = this.navParams.get("materia");
+    //this.turma = this.navParams.get("turma");
+    //this.materia = this.navParams.get("materia");
   }
 
   ionViewWillEnter() {
     this.Abrecarregamento("carreagando");
-    this.professorProvider.getProfessor(this.materia.idMateria).subscribe(
+    this.professorProvider.getProfessor().subscribe(
       data => {
         this.FechaCarregamento();
         const response = (data as any);
         const objeto_retorno = JSON.parse(response._body);
         if(response.status == 200){
-          this.professor = objeto_retorno;
+          this.professores = objeto_retorno;
         }else{
           if(response.status == 500){
             this.exibirMensagem('Erro interno no servidor');
@@ -67,12 +65,12 @@ export class ProfessoresPage{
 
         this.Abrecarregamento("carreganddo");
 
-          this.professorProvider.putPai(this.professor).subscribe(
+          this.professorProvider.putProfessor(professor).subscribe(
             data => {
               this.FechaCarregamento();
               const response = (data as any);
               //const objeto_retorno = JSON.parse(response._body);
-              if(response.status == 200){
+              if(response.status == 201){
                 this.exibirMensagem("Operação realizado com sucesso!")
                 //this.navCtrl.setRoot(TurmasPage);
               }else{
@@ -97,18 +95,13 @@ export class ProfessoresPage{
   }
 
   goCadastro(){
-    this.navCtrl.push(CadastrarPaiPage)
+    this.navCtrl.push(CadastrarProfessorPage)
 
   }
 
-  goEditar(pai:responsavel){
-    this.navCtrl.push(CadastrarPaiPage,{pai:pai})
+  goEditar(professor:professor){
+    this.navCtrl.push(CadastrarProfessorPage,{professor:professor})
   }
-
-  goAlunos(pai:responsavel){
-    this.navCtrl.push(AlunosPage,{pai:pai})
-  }
-
  
 
   Abrecarregamento(msg:string){

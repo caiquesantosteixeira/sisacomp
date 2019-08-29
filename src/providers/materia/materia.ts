@@ -24,6 +24,10 @@ export class MateriaProvider {
     console.log('Hello MateriaProvider Provider');
   }
 
+  getMateria(){ //API
+    return this.http.get(this.host.ip+this.host.caminhoClasses+"Materias/").timeout(8000);;
+  }
+
   getMateriaPorId(idTurma:number){ //API
     return this.http.get(this.host.ip+this.host.caminhoClasses+"Materias/"+idTurma).timeout(8000);;
   }
