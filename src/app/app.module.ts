@@ -1,3 +1,8 @@
+import { CadastrarReclamacaoPageModule } from './../pages/cadastrar-reclamacao/cadastrar-reclamacao.module';
+import { AlunosReclamacaoPageModule } from './../pages/alunos-reclamacao/alunos-reclamacao.module';
+import { ReclamacoesPageModule } from './../pages/reclamacoes/reclamacoes.module';
+import { TurmaReclamacaoPageModule } from './../pages/turma-reclamacao/turma-reclamacao.module';
+import { TurmaNoticiaPageModule } from './../pages/turma-noticia/turma-noticia.module';
 import { VincularProfessorPageModule } from './../pages/vincular-professor/vincular-professor.module';
 import { CadastrarProfessorPageModule } from './../pages/cadastrar-professor/cadastrar-professor.module';
 import { ProfessoresPageModule } from './../pages/professores/professores.module';
@@ -36,6 +41,7 @@ import { MateriaProvider } from '../providers/materia/materia';
 import { ProfessorProvider } from '../providers/professor/professor';
 import { MateriaTurmaProvider } from '../providers/materia-turma/materia-turma';
 import { ProfessorMateriaProvider } from '../providers/professor-materia/professor-materia';
+import { ReclamacaoProvider } from '../providers/reclamacao/reclamacao';
 
 
 @NgModule({
@@ -66,6 +72,11 @@ import { ProfessorMateriaProvider } from '../providers/professor-materia/profess
     ProfessoresPageModule,
     CadastrarProfessorPageModule,
     VincularProfessorPageModule,
+    TurmaNoticiaPageModule,
+    TurmaReclamacaoPageModule,
+    ReclamacoesPageModule,
+    AlunosReclamacaoPageModule,
+    CadastrarReclamacaoPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -86,7 +97,8 @@ import { ProfessorMateriaProvider } from '../providers/professor-materia/profess
     MateriaProvider,
     ProfessorProvider,
     MateriaTurmaProvider,
-    ProfessorMateriaProvider
+    ProfessorMateriaProvider,
+    ReclamacaoProvider
   ]
 })
 export class AppModule {}

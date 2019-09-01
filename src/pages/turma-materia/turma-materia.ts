@@ -1,4 +1,5 @@
 import { MateriasPage } from './../materias/materias';
+import { AlunosPage } from './../alunos/alunos';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, Loading, LoadingController } from 'ionic-angular';
 import { turma } from '../../Models/turma';

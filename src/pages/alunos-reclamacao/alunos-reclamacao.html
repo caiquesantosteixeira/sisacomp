@@ -1,0 +1,25 @@
+<!--
+  Generated template for the AlunosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <ion-title>alunos</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <ion-item *ngFor="let item of alunos">
+          <ion-card padding (click)="goReclamacao(item)">
+            <h2>Aluno: {{item.nome}} </h2>
+          
+            <p> CPF: {{item.cpf}} </p>
+            <p> Telefone: {{item.telefone}} </p>
+
+          </ion-card>
+        </ion-item>
+  
+  </ion-content>
+  

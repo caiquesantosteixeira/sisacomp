@@ -27,6 +27,10 @@ export class AlunoProvider {
     console.log('Hello ReponsavelProvider Provider');
   }
 
+  getAlunosByTurma(idTurma:number){ //API
+    return this.http.get(this.host.ip+this.host.caminhoClasses+"Alunos/turma?idTurma="+idTurma).timeout(8000);;
+  }
+
   getAlunosByPai(IdPai:number){ //API
     return this.http.get(this.host.ip+this.host.caminhoClasses+"Alunos/pai?idPai="+IdPai).timeout(8000);;
   }

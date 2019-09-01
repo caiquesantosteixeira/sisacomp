@@ -25696,6 +25696,13 @@ ion-navbar.toolbar {
   min-height: 46px;
 }
 
+page-cadastrar-reclamacao #myInput {
+  width: calc(100% - 10px);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
 page-cadastrar-turmas .error {
   color: #ff0000;
   font-size: 12px;

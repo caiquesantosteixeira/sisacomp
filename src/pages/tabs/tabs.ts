@@ -1,5 +1,5 @@
+import { TurmaReclamacaoPage } from './../turma-reclamacao/turma-reclamacao';
 import { AgendaPage } from './../agenda/agenda';
-import { NoticiasPage } from './../noticias/noticias';
 import { CadastrosPage } from './../cadastros/cadastros';
 import { Component } from '@angular/core';
 
@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 export class TabsPage {
 
   tab1Root = CadastrosPage;
-  tab2Root = NoticiasPage;
+  tab2Root = TurmaReclamacaoPage;
   tab3Root = AgendaPage;
 
   constructor() {

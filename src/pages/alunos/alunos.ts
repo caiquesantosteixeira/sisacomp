@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController, Loading, Item } from 'ionic-angular';
 import { AlunoProvider } from '../../providers/aluno/aluno';
 import { responsavel } from '../../Models/responsavel';
+import { turma } from '../../Models/turma';
+import { ReclamacoesPage } from '../reclamacoes/reclamacoes';
 
 /**
  * Generated class for the AlunosPage page.
@@ -28,29 +30,30 @@ export class AlunosPage {
 
 
   ionViewWillEnter() {
-    this.Abrecarregamento("carreagando");
-    this.AlunoProvider.getAlunosByPai(this.pai.idResponsavel).subscribe(
-      async data => {
-        this.FechaCarregamento();
-        const response = (data as any);
-        const objeto_retorno = JSON.parse(response._body);
-        if(response.status == 200){
-          this.alunos = objeto_retorno;
+      this.Abrecarregamento("carreagando");
+      this.AlunoProvider.getAlunosByPai(this.pai.idResponsavel).subscribe(
+        async data => {
+          this.FechaCarregamento();
+          const response = (data as any);
+          const objeto_retorno = JSON.parse(response._body);
+          if(response.status == 200){
+            this.alunos = objeto_retorno;
 
-        }else{
-          if(response.status == 500){
-            this.exibirMensagem('Erro interno no servidor');
           }else{
-            this.exibirMensagem('Falha ao tentar se comunicar com o servidor verifique sua conexão com a internet');
+            if(response.status == 500){
+              this.exibirMensagem('Erro interno no servidor');
+            }else{
+              this.exibirMensagem('Falha ao tentar se comunicar com o servidor verifique sua conexão com a internet');
+            }
           }
+        
+        }, error => {
+          this.FechaCarregamento();
+          this.exibirMensagem('falha ao tentar se comunicar com o servidor');
+          console.log(error)
         }
-      
-      }, error => {
-        this.FechaCarregamento();
-        this.exibirMensagem('falha ao tentar se comunicar com o servidor');
-        console.log(error)
-      }
-    )
+      )
+
   }
 
   ativar(aluno:aluno){
@@ -92,12 +95,18 @@ export class AlunosPage {
   }
 
   goCadastro(){
-    this.navCtrl.push(CadastarAlunoPage, {pai:this.pai})
 
+      this.navCtrl.push(CadastarAlunoPage, {pai:this.pai})
+    
+
+    
   }
 
   goEditar(aluno:responsavel){
-    this.navCtrl.push(CadastarAlunoPage,{aluno:aluno, pai:this.pai})
+
+      this.navCtrl.push(CadastarAlunoPage,{aluno:aluno, pai:this.pai})
+    
+  
   }
 
   
