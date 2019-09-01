@@ -1,3 +1,7 @@
+import { ExibicaoNoticiasPageModule } from './../pages/exibicao-noticias/exibicao-noticias.module';
+import { FilhosPageModule } from './../pages/filhos/filhos.module';
+import { LoginResponsavelPageModule } from './../pages/login-responsavel/login-responsavel.module';
+
 import { LoginProfessorPageModule } from './../pages/login-professor/login-professor.module';
 import { CadastrarNoticiaPageModule } from './../pages/cadastrar-noticia/cadastrar-noticia.module';
 import { CadastrarAgendaPageModule } from './../pages/cadastrar-agenda/cadastrar-agenda.module';
@@ -34,6 +38,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { TabResponsavelPage } from './../pages/tab-responsavel/tab-responsavel';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -50,6 +55,8 @@ import { AgendaProvider } from '../providers/agenda/agenda';
 import { NoticiasProvider } from '../providers/noticias/noticias';
 import { LoginAdminPageModule } from '../pages/login-admin/login-admin.module';
 import { AdministradorProvider } from '../providers/administrador/administrador';
+import { ExibicaoReclamacoesPageModule } from '../pages/exibicao-reclamacoes/exibicao-reclamacoes.module';
+import { ExibicaoAgendasPageModule } from '../pages/exibicao-agendas/exibicao-agendas.module';
 
 
 @NgModule({
@@ -59,6 +66,7 @@ import { AdministradorProvider } from '../providers/administrador/administrador'
     ContactPage,
     HomePage,
     TabsPage,
+    TabResponsavelPage
   ],
   imports: [
     BrowserModule,
@@ -90,7 +98,11 @@ import { AdministradorProvider } from '../providers/administrador/administrador'
     CadastrarNoticiaPageModule,
     LoginProfessorPageModule,
     LoginAdminPageModule,
-    LoginProfessorPageModule,
+    LoginResponsavelPageModule,
+    FilhosPageModule,
+    ExibicaoNoticiasPageModule,
+    ExibicaoReclamacoesPageModule,
+    ExibicaoAgendasPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -99,7 +111,8 @@ import { AdministradorProvider } from '../providers/administrador/administrador'
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    TabResponsavelPage
   ],
   providers: [
     StatusBar,

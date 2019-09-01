@@ -1,6 +1,7 @@
+import { LoginResponsavelPage } from './../login-responsavel/login-responsavel';
 import { LoginAdminPage } from './../login-admin/login-admin';
 import { LoginProfessorPage } from './../login-professor/login-professor';
-import { LoginResposavelPage } from './../login-resposavel/login-resposavel';
+
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -15,7 +16,7 @@ export class HomePage {
   }
 
   goPais(){
-    this.navCtrl.push(LoginResposavelPage)
+    this.navCtrl.push(LoginResponsavelPage)
   }
 
   goProfessores(){

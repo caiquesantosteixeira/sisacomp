@@ -21,6 +21,10 @@ export class ProfessorProvider {
     console.log('Hello ReponsavelProvider Provider');
   }
 
+  Login(login:string, senha:string){ //API
+    return this.http.get(this.host.ip+this.host.caminhoClasses+"professor/login?login="+login+"&senha="+senha).timeout(8000);;
+  }
+
   getProfessor(){ //API
     return this.http.get(this.host.ip+this.host.caminhoClasses+"professor").timeout(8000);
   }

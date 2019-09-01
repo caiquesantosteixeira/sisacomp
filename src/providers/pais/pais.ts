@@ -23,6 +23,9 @@ export class PaisProvider {
   constructor( public http:Http) {
     console.log('Hello ReponsavelProvider Provider');
   }
+  Login(login:string, senha:string){ //API
+    return this.http.get(this.host.ip+this.host.caminhoClasses+"Responsavel/login?login="+login+"&senha="+senha).timeout(8000);;
+  }
 
   getPaisTurma(idTurma:number){ //API
     return this.http.get(this.host.ip+this.host.caminhoClasses+"Responsavel/"+idTurma).timeout(8000);;

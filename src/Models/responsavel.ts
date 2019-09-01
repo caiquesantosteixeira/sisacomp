@@ -1,3 +1,5 @@
+import { aluno } from "./aluno";
+
 export class responsavel{
     idResponsavel : number;
     nome :string;
@@ -6,4 +8,5 @@ export class responsavel{
     telefone :string;
     ativo : number;
     senha :string;
+    filho:aluno;
 }
