@@ -25696,6 +25696,20 @@ ion-navbar.toolbar {
   min-height: 46px;
 }
 
+page-cadastrar-agenda #myInput {
+  width: calc(100% - 10px);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+page-cadastrar-noticia #myInput {
+  width: calc(100% - 10px);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
 page-cadastrar-reclamacao #myInput {
   width: calc(100% - 10px);
   border: 0;
@@ -25709,6 +25723,14 @@ page-cadastrar-turmas .error {
 }
 
 page-cadastros .largura {
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+page-home .largura {
   width: 90%;
   display: block;
   margin-left: auto;

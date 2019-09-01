@@ -1,7 +1,8 @@
+import { TurmaAgendaPage } from './../turma-agenda/turma-agenda';
 import { TurmaReclamacaoPage } from './../turma-reclamacao/turma-reclamacao';
-import { AgendaPage } from './../agenda/agenda';
 import { CadastrosPage } from './../cadastros/cadastros';
 import { Component } from '@angular/core';
+import { NoticiasPage } from '../noticias/noticias';
 
 
 
@@ -12,8 +13,8 @@ export class TabsPage {
 
   tab1Root = CadastrosPage;
   tab2Root = TurmaReclamacaoPage;
-  tab3Root = AgendaPage;
-
+  tab3Root = TurmaAgendaPage;
+  tab4Root = NoticiasPage
   constructor() {
 
   }

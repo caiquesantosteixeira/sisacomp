@@ -1,3 +1,7 @@
+import { LoginProfessorPageModule } from './../pages/login-professor/login-professor.module';
+import { CadastrarNoticiaPageModule } from './../pages/cadastrar-noticia/cadastrar-noticia.module';
+import { CadastrarAgendaPageModule } from './../pages/cadastrar-agenda/cadastrar-agenda.module';
+import { TurmaAgendaPageModule } from './../pages/turma-agenda/turma-agenda.module';
 import { CadastrarReclamacaoPageModule } from './../pages/cadastrar-reclamacao/cadastrar-reclamacao.module';
 import { AlunosReclamacaoPageModule } from './../pages/alunos-reclamacao/alunos-reclamacao.module';
 import { ReclamacoesPageModule } from './../pages/reclamacoes/reclamacoes.module';
@@ -42,6 +46,10 @@ import { ProfessorProvider } from '../providers/professor/professor';
 import { MateriaTurmaProvider } from '../providers/materia-turma/materia-turma';
 import { ProfessorMateriaProvider } from '../providers/professor-materia/professor-materia';
 import { ReclamacaoProvider } from '../providers/reclamacao/reclamacao';
+import { AgendaProvider } from '../providers/agenda/agenda';
+import { NoticiasProvider } from '../providers/noticias/noticias';
+import { LoginAdminPageModule } from '../pages/login-admin/login-admin.module';
+import { AdministradorProvider } from '../providers/administrador/administrador';
 
 
 @NgModule({
@@ -77,6 +85,12 @@ import { ReclamacaoProvider } from '../providers/reclamacao/reclamacao';
     ReclamacoesPageModule,
     AlunosReclamacaoPageModule,
     CadastrarReclamacaoPageModule,
+    TurmaAgendaPageModule,
+    CadastrarAgendaPageModule,
+    CadastrarNoticiaPageModule,
+    LoginProfessorPageModule,
+    LoginAdminPageModule,
+    LoginProfessorPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -98,7 +112,10 @@ import { ReclamacaoProvider } from '../providers/reclamacao/reclamacao';
     ProfessorProvider,
     MateriaTurmaProvider,
     ProfessorMateriaProvider,
-    ReclamacaoProvider
+    ReclamacaoProvider,
+    AgendaProvider,
+    NoticiasProvider,
+    AdministradorProvider
   ]
 })
 export class AppModule {}
