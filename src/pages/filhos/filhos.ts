@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { aluno } from '../../Models/aluno';
 import { ExibicaoReclamacoesPage } from '../exibicao-reclamacoes/exibicao-reclamacoes';
+import { ExibicaoMateriasPage } from '../exibicao-materias/exibicao-materias';
 
 /**
  * Generated class for the FilhosPage page.
@@ -32,6 +33,10 @@ export class FilhosPage {
 
   goAgendas(aluno:aluno){
     this.navCtrl.push(ExibicaoAgendasPage, {aluno:aluno})
+  }
+
+  goNotas(aluno:aluno){
+    this.navCtrl.push(ExibicaoMateriasPage, {aluno:aluno})
   }
 
 }

@@ -1,3 +1,10 @@
+import { CadastrarNotaPageModule } from './../pages/cadastrar-nota/cadastrar-nota.module';
+import { ExibicaoMateriasPageModule } from './../pages/exibicao-materias/exibicao-materias.module';
+import { CadastrarNotaPage } from './../pages/cadastrar-nota/cadastrar-nota';
+import { ExibicaoAlunosTurmaPageModule } from './../pages/exibicao-alunos-turma/exibicao-alunos-turma.module';
+import { TurmaAlunosPageModule } from './../pages/turma-alunos/turma-alunos.module';
+import { ProvasPageModule } from './../pages/provas/provas.module';
+import { NotasPageModule } from './../pages/notas/notas.module';
 import { ExibicaoNoticiasPageModule } from './../pages/exibicao-noticias/exibicao-noticias.module';
 import { FilhosPageModule } from './../pages/filhos/filhos.module';
 import { LoginResponsavelPageModule } from './../pages/login-responsavel/login-responsavel.module';
@@ -39,6 +46,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TabResponsavelPage } from './../pages/tab-responsavel/tab-responsavel';
+import { TabProfessorPage } from './../pages/tab-professor/tab-professor';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -57,6 +65,8 @@ import { LoginAdminPageModule } from '../pages/login-admin/login-admin.module';
 import { AdministradorProvider } from '../providers/administrador/administrador';
 import { ExibicaoReclamacoesPageModule } from '../pages/exibicao-reclamacoes/exibicao-reclamacoes.module';
 import { ExibicaoAgendasPageModule } from '../pages/exibicao-agendas/exibicao-agendas.module';
+import { ProvasProvider } from '../providers/provas/provas';
+import { ExibicaoMateriasPage } from '../pages/exibicao-materias/exibicao-materias';
 
 
 @NgModule({
@@ -66,7 +76,8 @@ import { ExibicaoAgendasPageModule } from '../pages/exibicao-agendas/exibicao-ag
     ContactPage,
     HomePage,
     TabsPage,
-    TabResponsavelPage
+    TabResponsavelPage,
+    TabProfessorPage
   ],
   imports: [
     BrowserModule,
@@ -103,6 +114,12 @@ import { ExibicaoAgendasPageModule } from '../pages/exibicao-agendas/exibicao-ag
     ExibicaoNoticiasPageModule,
     ExibicaoReclamacoesPageModule,
     ExibicaoAgendasPageModule,
+    NotasPageModule,
+    ProvasPageModule,
+    TurmaAlunosPageModule,
+    ExibicaoAlunosTurmaPageModule,
+    CadastrarNotaPageModule,
+    ExibicaoMateriasPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -112,7 +129,8 @@ import { ExibicaoAgendasPageModule } from '../pages/exibicao-agendas/exibicao-ag
     ContactPage,
     HomePage,
     TabsPage,
-    TabResponsavelPage
+    TabResponsavelPage,
+    TabProfessorPage
   ],
   providers: [
     StatusBar,
@@ -128,7 +146,8 @@ import { ExibicaoAgendasPageModule } from '../pages/exibicao-agendas/exibicao-ag
     ReclamacaoProvider,
     AgendaProvider,
     NoticiasProvider,
-    AdministradorProvider
+    AdministradorProvider,
+    ProvasProvider
   ]
 })
 export class AppModule {}

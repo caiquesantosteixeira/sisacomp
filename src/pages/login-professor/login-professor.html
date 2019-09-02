@@ -6,10 +6,31 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>loginProfessor</ion-title>
+    <ion-title>Login Professor</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
+    <ion-item>
+        <ion-label stacked>CPF</ion-label>
+   
+        <ion-input [(ngModel)]="cpf"
+                    type="Tel"
+                    placeholder="Cpf"
+                    [brmasker]="{mask:'000.000.000-00', len:14}"
+                    clearInput clearOnEdit="false">
+        </ion-input>
+     </ion-item>
+   
+     <ion-item>
+        <ion-label stacked>Senha</ion-label>
+        <ion-input [(ngModel)]="senha"
+                    type="password"
+                    placeholder="senha"
+                    clearInput clearOnEdit="false">
+        </ion-input>
+     </ion-item>
+   
+     <button ion-button full color="secondary" class="login-button" (click)="Login()">Login</button>
 </ion-content>

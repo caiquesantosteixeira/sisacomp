@@ -5,8 +5,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController, Loading, Item } from 'ionic-angular';
 import { AlunoProvider } from '../../providers/aluno/aluno';
 import { responsavel } from '../../Models/responsavel';
-import { turma } from '../../Models/turma';
-import { ReclamacoesPage } from '../reclamacoes/reclamacoes';
+
 
 /**
  * Generated class for the AlunosPage page.

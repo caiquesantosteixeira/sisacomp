@@ -1,0 +1,23 @@
+<!--
+  Generated template for the ExibicaoMateriasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Notas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item *ngFor="let item of materias">
+        <ion-card padding>
+          <h2>Matéria: {{item.nome}} </h2>
+          <h2>Nota 1: 8.00 </h2>
+          <h2>Nota 2: 5.00 </h2>
+        </ion-card>
+      </ion-item>
+   
+
+</ion-content>
